@@ -17,12 +17,14 @@ namespace WebPass
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            
+
             Clippy a = new Clippy();
             a.StartPosition = FormStartPosition.Manual;
             a.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - a.Width,
                                    Screen.PrimaryScreen.WorkingArea.Height - a.Height);
+
             Application.Run(a);
+
         }
     }
 }
