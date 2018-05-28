@@ -40,6 +40,8 @@
             // 
             // btnCDKey
             // 
+            this.btnCDKey.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCDKey.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCDKey.Location = new System.Drawing.Point(13, 13);
             this.btnCDKey.Name = "btnCDKey";
             this.btnCDKey.Size = new System.Drawing.Size(75, 21);
@@ -50,6 +52,8 @@
             // 
             // btnSQL
             // 
+            this.btnSQL.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSQL.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnSQL.Location = new System.Drawing.Point(94, 13);
             this.btnSQL.Name = "btnSQL";
             this.btnSQL.Size = new System.Drawing.Size(75, 21);
@@ -60,6 +64,8 @@
             // 
             // btnRBS
             // 
+            this.btnRBS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRBS.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnRBS.Location = new System.Drawing.Point(175, 13);
             this.btnRBS.Name = "btnRBS";
             this.btnRBS.Size = new System.Drawing.Size(75, 21);
@@ -70,6 +76,8 @@
             // 
             // btnCCleaner
             // 
+            this.btnCCleaner.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCCleaner.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCCleaner.Location = new System.Drawing.Point(256, 13);
             this.btnCCleaner.Name = "btnCCleaner";
             this.btnCCleaner.Size = new System.Drawing.Size(75, 21);
@@ -80,6 +88,8 @@
             // 
             // btnRegAdd
             // 
+            this.btnRegAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRegAdd.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnRegAdd.Location = new System.Drawing.Point(337, 13);
             this.btnRegAdd.Name = "btnRegAdd";
             this.btnRegAdd.Size = new System.Drawing.Size(75, 21);
@@ -90,7 +100,10 @@
             // 
             // cmbVersion
             // 
+            this.cmbVersion.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cmbVersion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbVersion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbVersion.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.cmbVersion.FormattingEnabled = true;
             this.cmbVersion.Items.AddRange(new object[] {
             "Community",
@@ -104,6 +117,8 @@
             // 
             // btnOther
             // 
+            this.btnOther.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnOther.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnOther.Location = new System.Drawing.Point(568, 13);
             this.btnOther.Name = "btnOther";
             this.btnOther.Size = new System.Drawing.Size(75, 21);
@@ -116,8 +131,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(664, 49);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ClientSize = new System.Drawing.Size(664, 48);
             this.Controls.Add(this.btnOther);
             this.Controls.Add(this.cmbVersion);
             this.Controls.Add(this.btnRegAdd);

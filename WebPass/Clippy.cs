@@ -34,30 +34,30 @@ namespace WebPass
 
         private void button1_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Clipboard.SetText(CDKey);
+            Clipboard.SetText(CDKey);
         }
 
         private void btnSQL_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Clipboard.SetText(SQL);
+            Clipboard.SetText(SQL);
 
         }
 
         private void btnRBS_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Clipboard.SetText(RBS);
+           Clipboard.SetText(RBS);
 
         }
 
         private void btnCCleaner_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Clipboard.SetText(CCLeaner);
+            Clipboard.SetText(CCLeaner);
 
         }
 
         private void btnRegAdd_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Clipboard.SetText(RegAdd);
+            Clipboard.SetText(RegAdd);
 
         }
 
