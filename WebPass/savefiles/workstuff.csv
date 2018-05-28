@@ -1,0 +1,8 @@
+﻿CDKey,Wc17301425pw
+SQL,W3b5t3r485698
+RBS,manrexCD1405@
+CCLeaner,https://www.ccleaner.com/ccleaner/download/standard
+RegAdd,REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLinkedConnections /t REG_DWORD /d 1 /f
+Community,http://download.ewebstercare.net/software/mms/Community/Community_MMS-Installer-52.12.68.exe
+Pro,http://download.ewebstercare.net/software/mms/Professional/Professional_MMS-Installer-52.12.68.exe
+ProPlus,http://download.ewebstercare.net/software/mms/ProfessionalPlus/PLUS_MMS-Installer-52.12.68.exe
