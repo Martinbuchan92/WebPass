@@ -24,11 +24,18 @@ namespace WebPass
         private String Community;
         private String Pro;
         private String ProPlus;
+        private String NoBackupHeader;
+        private String NoBackup;
+        private String ZeroMBHeader;
+        private String ZeroMB;
+        private String Permissions;
+
+        private bool more = false;
+
 
         public Clippy()
         {
             InitializeComponent();
-
             MouseDown += Clippy_MouseDown;
         }
 
@@ -61,9 +68,34 @@ namespace WebPass
 
         }
 
-        private void btnOther_Click(object sender, EventArgs e)
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnNotePad_Click(object sender, EventArgs e)
         {
             Process.Start(@"C:\Program Files (x86)\Notepad++\notepad++");
+        }
+
+        private void btnMedsPro_Click(object sender, EventArgs e)
+        {
+            Process.Start(@"S:\Core Team\MedsPro");
+        }
+
+        private void btnOther_Click(object sender, EventArgs e)
+        {
+            if (more == false)
+            {
+                this.Size = new Size(this.Width, 54);
+                more = true;
+            }
+            else
+            {
+                this.Size = new Size(this.Width, this.Height/2);
+                more = false;
+            }
+                
         }
 
 
@@ -90,8 +122,11 @@ namespace WebPass
                 Community = information[5];
                 Pro = information[6];
                 ProPlus = information[7];
-
-
+                NoBackupHeader = information[8];
+                NoBackup = information[9];
+                ZeroMBHeader = information[10];
+                ZeroMB = information[11];
+                Permissions = information[12];
             }
         }
 
@@ -103,13 +138,13 @@ namespace WebPass
                 switch (value)
                 {
                     case 0:
-                        System.Windows.Forms.Clipboard.SetText(Community);
+                        Clipboard.SetText(Community);
                         break;
                     case 1:
-                        System.Windows.Forms.Clipboard.SetText(Pro);
+                        Clipboard.SetText(Pro);
                         break;
                     case 2:
-                        System.Windows.Forms.Clipboard.SetText(ProPlus);
+                        Clipboard.SetText(ProPlus);
                         break;
 
                 }
@@ -117,6 +152,29 @@ namespace WebPass
             catch (System.Runtime.InteropServices.ExternalException)
             {
 
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int value = comboBox1.SelectedIndex;
+            switch (value)
+            {
+                case 0:
+                    Clipboard.SetText(NoBackupHeader);
+                    break;
+                case 1:
+                    Clipboard.SetText(NoBackup);
+                    break;
+                case 2:
+                    Clipboard.SetText(ZeroMBHeader);
+                    break;
+                case 3:
+                    Clipboard.SetText(ZeroMB);
+                    break;
+                case 4:
+                    Clipboard.SetText(Permissions);
+                    break;
             }
         }
 
@@ -136,5 +194,7 @@ namespace WebPass
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
+
+
     }
 }
