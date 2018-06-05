@@ -41,8 +41,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.btnMedsPro = new System.Windows.Forms.Button();
             this.btnNotePad = new System.Windows.Forms.Button();
-            this.BtnClose = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.BtnClose = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCDKey
@@ -191,19 +192,6 @@
             this.btnNotePad.UseVisualStyleBackColor = true;
             this.btnNotePad.Click += new System.EventHandler(this.btnNotePad_Click);
             // 
-            // BtnClose
-            // 
-            this.BtnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnClose.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnClose.Location = new System.Drawing.Point(568, 30);
-            this.BtnClose.Name = "BtnClose";
-            this.BtnClose.Size = new System.Drawing.Size(75, 21);
-            this.BtnClose.TabIndex = 14;
-            this.BtnClose.Text = "Close";
-            this.BtnClose.UseVisualStyleBackColor = true;
-            this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
-            // 
             // comboBox1
             // 
             this.comboBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -223,6 +211,32 @@
             this.comboBox1.TabIndex = 15;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // BtnClose
+            // 
+            this.BtnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnClose.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnClose.Location = new System.Drawing.Point(601, 30);
+            this.BtnClose.Name = "BtnClose";
+            this.BtnClose.Size = new System.Drawing.Size(42, 21);
+            this.BtnClose.TabIndex = 14;
+            this.BtnClose.Text = "Close";
+            this.BtnClose.UseVisualStyleBackColor = true;
+            this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSettings.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSettings.Location = new System.Drawing.Point(568, 30);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(27, 21);
+            this.btnSettings.TabIndex = 16;
+            this.btnSettings.Text = "...";
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
             // Clippy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -230,6 +244,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.CancelButton = this.BtnClose;
             this.ClientSize = new System.Drawing.Size(664, 54);
+            this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.btnNotePad);
@@ -270,8 +285,9 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnMedsPro;
         private System.Windows.Forms.Button btnNotePad;
-        private System.Windows.Forms.Button BtnClose;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button BtnClose;
+        private System.Windows.Forms.Button btnSettings;
     }
 }
 

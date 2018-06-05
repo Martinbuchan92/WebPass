@@ -31,12 +31,34 @@ namespace WebPass
         private String Permissions;
 
         private bool more = false;
-
+        List<itemInfo> items = ClippyIO.Data_Load(path + "workstuff2.csv");
 
         public Clippy()
         {
             InitializeComponent();
             MouseDown += Clippy_MouseDown;
+
+            
+            if (items[0].Type1 == itemInfo.Type.Clip)
+            {
+                button1.Click += new EventHandler(this.MyButtonHandler);
+            }
+        }
+
+        void MyButtonHandler(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.Name = items[0].Name;
+            if (items[0].Type1 == itemInfo.Type.Clip)
+            {
+
+            }else if(items[0].Type1 == itemInfo.Type.File)
+            {
+
+            }else if(items[0].Type1 == itemInfo.Type.File)
+            {
+
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -195,6 +217,10 @@ namespace WebPass
             }
         }
 
-
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            Settings setting = new Settings();
+            setting.Show();
+        }
     }
 }
