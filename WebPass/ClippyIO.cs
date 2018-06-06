@@ -32,10 +32,17 @@ namespace WebPass
             }
         }
 
-        public Boolean Data_Save(itemInfo item)
+        public static Boolean Data_Save(List<itemInfo> item, String path)
         {
-
-            return true;
+            using (var writer = new StreamWriter(path))
+            {
+                foreach(itemInfo thing in item)
+                {
+                    var line = thing.Type1 + ", " + thing.Name + ", " + thing.Detail;
+                    writer.WriteLine(line);
+                }
+            }
+                return true;
         }
     }
 }

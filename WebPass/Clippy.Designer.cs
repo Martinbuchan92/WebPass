@@ -266,7 +266,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Clippy";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.Clippy_Load);
             this.ResumeLayout(false);
 
         }

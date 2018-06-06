@@ -39,10 +39,10 @@ namespace WebPass
             MouseDown += Clippy_MouseDown;
 
             
-            if (items[0].Type1 == itemInfo.Type.Clip)
-            {
-                button1.Click += new EventHandler(this.MyButtonHandler);
-            }
+            //if (items[0].Type1 == itemInfo.Type.Clip)
+            //{
+            //    button1.Click += new EventHandler(this.MyButtonHandler);
+            //}
         }
 
         void MyButtonHandler(object sender, EventArgs e)
@@ -63,7 +63,9 @@ namespace WebPass
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(CDKey);
+            //Clipboard.SetText(CDKey);
+            items[2].Detail = "A PAssword";
+            ClippyIO.Data_Save(items, path + "workstuff2.csv");
         }
 
         private void btnSQL_Click(object sender, EventArgs e)
@@ -74,7 +76,7 @@ namespace WebPass
 
         private void btnRBS_Click(object sender, EventArgs e)
         {
-           Clipboard.SetText(RBS);
+           Clipboard.SetText(items[2].Detail);
 
         }
 
@@ -122,35 +124,35 @@ namespace WebPass
 
 
 
-        private void Clippy_Load(object sender, EventArgs e)
-        {
-            using (var reader = new StreamReader(path + "workstuff.csv"))
-            {
-                List<string> information = new List<string>();
-                while (!reader.EndOfStream)
-                {
-                    var line = reader.ReadLine();
-                    var values = line.Split(',');
+        //private void Clippy_Load(object sender, EventArgs e)
+        //{
+        //    using (var reader = new StreamReader(path + "workstuff.csv"))
+        //    {
+        //        List<string> information = new List<string>();
+        //        while (!reader.EndOfStream)
+        //        {
+        //            var line = reader.ReadLine();
+        //            var values = line.Split(',');
 
 
-                    information.Add(values[1]);
-                }
+        //            information.Add(values[1]);
+        //        }
 
-                CDKey = information[0];
-                SQL = information[1];
-                RBS = information[2];
-                CCLeaner = information[3];
-                RegAdd = information[4];
-                Community = information[5];
-                Pro = information[6];
-                ProPlus = information[7];
-                NoBackupHeader = information[8];
-                NoBackup = information[9];
-                ZeroMBHeader = information[10];
-                ZeroMB = information[11];
-                Permissions = information[12];
-            }
-        }
+        //        CDKey = information[0];
+        //        SQL = information[1];
+        //        RBS = information[2];
+        //        CCLeaner = information[3];
+        //        RegAdd = information[4];
+        //        Community = information[5];
+        //        Pro = information[6];
+        //        ProPlus = information[7];
+        //        NoBackupHeader = information[8];
+        //        NoBackup = information[9];
+        //        ZeroMBHeader = information[10];
+        //        ZeroMB = information[11];
+        //        Permissions = information[12];
+        //    }
+        //}
 
         private void cmbVersion_SelectedIndexChanged(object sender, EventArgs e)
         {
