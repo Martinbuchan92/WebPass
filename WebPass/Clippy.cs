@@ -31,7 +31,7 @@ namespace WebPass
         private String Permissions;
 
         private bool more = false;
-        List<itemInfo> items = ClippyIO.Data_Load(path + "workstuff2.csv");
+        List<ItemInfo> items = ClippyIO.Data_Load(path + "workstuff2.csv");
 
         public Clippy()
         {
@@ -49,13 +49,13 @@ namespace WebPass
         {
             Button btn = (Button)sender;
             btn.Name = items[0].Name;
-            if (items[0].Type1 == itemInfo.Type.Clip)
+            if (items[0].Type1 == ItemInfo.Type.Clip)
             {
 
-            }else if(items[0].Type1 == itemInfo.Type.File)
+            }else if(items[0].Type1 == ItemInfo.Type.File)
             {
 
-            }else if(items[0].Type1 == itemInfo.Type.File)
+            }else if(items[0].Type1 == ItemInfo.Type.File)
             {
 
             }
@@ -64,8 +64,7 @@ namespace WebPass
         private void button1_Click(object sender, EventArgs e)
         {
             //Clipboard.SetText(CDKey);
-            items[2].Detail = "A PAssword";
-            ClippyIO.Data_Save(items, path + "workstuff2.csv");
+            items[2].Detail = "AnotherPassword";
         }
 
         private void btnSQL_Click(object sender, EventArgs e)
@@ -94,6 +93,7 @@ namespace WebPass
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
+            ClippyIO.Data_Save(items, path + "workstuff2.csv");
             this.Close();
         }
 

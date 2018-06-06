@@ -12,6 +12,8 @@ namespace WebPass
 {
     public partial class Settings : Form
     {
+        public OpenFileDialog file;
+
         public Settings()
         {
             InitializeComponent();
@@ -68,9 +70,15 @@ namespace WebPass
                     txtProgramPath.Enabled = true;
                     break;
             }
-
-
         }
 
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            file = new OpenFileDialog();
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                txtFilePath.Text = file.SafeFileName;
+            }
+        }
     }
 }
