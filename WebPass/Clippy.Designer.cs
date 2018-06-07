@@ -34,14 +34,14 @@
             this.btnRBS = new System.Windows.Forms.Button();
             this.btnCCleaner = new System.Windows.Forms.Button();
             this.btnRegAdd = new System.Windows.Forms.Button();
-            this.cmbVersion = new System.Windows.Forms.ComboBox();
+            this.cmbOne = new System.Windows.Forms.ComboBox();
             this.btnOther = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnMedsPro = new System.Windows.Forms.Button();
             this.btnNotePad = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbTwo = new System.Windows.Forms.ComboBox();
             this.BtnClose = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -106,22 +106,22 @@
             this.btnRegAdd.UseVisualStyleBackColor = true;
             this.btnRegAdd.Click += new System.EventHandler(this.btnRegAdd_Click);
             // 
-            // cmbVersion
+            // cmbOne
             // 
-            this.cmbVersion.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.cmbVersion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbVersion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmbVersion.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.cmbVersion.FormattingEnabled = true;
-            this.cmbVersion.Items.AddRange(new object[] {
+            this.cmbOne.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.cmbOne.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbOne.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbOne.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.cmbOne.FormattingEnabled = true;
+            this.cmbOne.Items.AddRange(new object[] {
             "Community",
             "Pro",
             "Pro Plus"});
-            this.cmbVersion.Location = new System.Drawing.Point(418, 2);
-            this.cmbVersion.Name = "cmbVersion";
-            this.cmbVersion.Size = new System.Drawing.Size(144, 21);
-            this.cmbVersion.TabIndex = 5;
-            this.cmbVersion.SelectedIndexChanged += new System.EventHandler(this.cmbVersion_SelectedIndexChanged);
+            this.cmbOne.Location = new System.Drawing.Point(418, 2);
+            this.cmbOne.Name = "cmbOne";
+            this.cmbOne.Size = new System.Drawing.Size(144, 21);
+            this.cmbOne.TabIndex = 5;
+            this.cmbOne.SelectedIndexChanged += new System.EventHandler(this.cmbOne_SelectedIndexChanged);
             // 
             // btnOther
             // 
@@ -192,24 +192,24 @@
             this.btnNotePad.UseVisualStyleBackColor = true;
             this.btnNotePad.Click += new System.EventHandler(this.btnNotePad_Click);
             // 
-            // comboBox1
+            // cmbTwo
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbTwo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.cmbTwo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTwo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbTwo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.cmbTwo.FormattingEnabled = true;
+            this.cmbTwo.Items.AddRange(new object[] {
             "No Backup Header",
             "No Backup",
             "Zero mb Header",
             "No Space",
             "Permissions"});
-            this.comboBox1.Location = new System.Drawing.Point(418, 30);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(144, 21);
-            this.comboBox1.TabIndex = 15;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbTwo.Location = new System.Drawing.Point(418, 30);
+            this.cmbTwo.Name = "cmbTwo";
+            this.cmbTwo.Size = new System.Drawing.Size(144, 21);
+            this.cmbTwo.TabIndex = 15;
+            this.cmbTwo.SelectedIndexChanged += new System.EventHandler(this.cmbTwo_SelectedIndexChanged);
             // 
             // BtnClose
             // 
@@ -245,7 +245,7 @@
             this.CancelButton = this.BtnClose;
             this.ClientSize = new System.Drawing.Size(664, 54);
             this.Controls.Add(this.btnSettings);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbTwo);
             this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.btnNotePad);
             this.Controls.Add(this.btnMedsPro);
@@ -253,7 +253,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnOther);
-            this.Controls.Add(this.cmbVersion);
+            this.Controls.Add(this.cmbOne);
             this.Controls.Add(this.btnRegAdd);
             this.Controls.Add(this.btnCCleaner);
             this.Controls.Add(this.btnRBS);
@@ -277,16 +277,16 @@
         private System.Windows.Forms.Button btnRBS;
         private System.Windows.Forms.Button btnCCleaner;
         private System.Windows.Forms.Button btnRegAdd;
-        private System.Windows.Forms.ComboBox cmbVersion;
         private System.Windows.Forms.Button btnOther;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnMedsPro;
         private System.Windows.Forms.Button btnNotePad;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button BtnClose;
         private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.ComboBox cmbOne;
+        private System.Windows.Forms.ComboBox cmbTwo;
     }
 }
 

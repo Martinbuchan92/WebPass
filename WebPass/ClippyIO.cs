@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WebPass
 {
@@ -15,8 +12,6 @@ namespace WebPass
         {
             using (var reader = new StreamReader(path))
             {
-                //List<string> information = new List<string>();
-
                 while (!reader.EndOfStream)
                 {
                     var line = reader.ReadLine();
@@ -24,8 +19,10 @@ namespace WebPass
 
                     ItemInfo item = new ItemInfo(values[0], values[1], values[2], values[3]);
                     itemInfos.Add(item);
-
-                    //information.Add(values[1]);
+                    if(item.Position1 == ItemInfo.Position.dropDownOne || item.Position1 == ItemInfo.Position.dropDownTwo)
+                    {
+                        
+                    }
                 }
 
                 return itemInfos;

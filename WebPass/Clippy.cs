@@ -15,49 +15,67 @@ namespace WebPass
     public partial class Clippy : Form
     {
         private const String path = @"..\..\savefiles\";
+        private bool more = false;
+        List<ItemInfo> items = ClippyIO.Data_Load(path + "workstuff2.csv");
 
-        private String CDKey;
-        private String SQL;
-        private String RBS;
-        private String CCLeaner;
-        private String RegAdd;
+        //Button set 1
+        private String Button1;
+        private String Button2;
+        private String Button3;
+        private String Button4;
+        private String Button5;
+
+        //Main Dropdown        
         private String Community;
         private String Pro;
         private String ProPlus;
+
+        //Button set 2
+        private String Button6;
+        private String Button7;
+        private String Button8;
+        private String Button9;
+        private String Button10;
+
+        //Second Dropdown
         private String NoBackupHeader;
         private String NoBackup;
         private String ZeroMBHeader;
         private String ZeroMB;
         private String Permissions;
 
-        private bool more = false;
-        List<ItemInfo> items = ClippyIO.Data_Load(path + "workstuff2.csv");
-
         public Clippy()
         {
             InitializeComponent();
             MouseDown += Clippy_MouseDown;
-
-            
-            //if (items[0].Type1 == itemInfo.Type.Clip)
-            //{
-            //    button1.Click += new EventHandler(this.MyButtonHandler);
-            //}
         }
 
-        void MyButtonHandler(object sender, EventArgs e)
+        void MyButtonHandler(ItemInfo item)
         {
-            Button btn = (Button)sender;
-            btn.Name = items[0].Name;
-            if (items[0].Type1 == ItemInfo.Type.Clip)
+            if (item.Type1 == ItemInfo.Type.Clip)
             {
+                try
+                {
+                    Clipboard.SetText(item.Detail);
+                }
+                catch
+                {
 
-            }else if(items[0].Type1 == ItemInfo.Type.File)
+                }
+            }
+            else if(item.Type1 == ItemInfo.Type.File)
             {
+                try
+                {
+                    Process.Start(item.Detail);
+                }
+                catch
+                {
 
-            }else if(items[0].Type1 == ItemInfo.Type.File)
+                }
+            }else
             {
-
+                Clipboard.SetText(item.Detail);
             }
         }
 
@@ -69,7 +87,7 @@ namespace WebPass
 
         private void btnSQL_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(SQL);
+            Clipboard.SetText(Button2);
 
         }
 
@@ -81,13 +99,13 @@ namespace WebPass
 
         private void btnCCleaner_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(CCLeaner);
+            Clipboard.SetText(Button10);
 
         }
 
         private void btnRegAdd_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(RegAdd);
+            Clipboard.SetText(Button5);
 
         }
 
@@ -122,43 +140,11 @@ namespace WebPass
                 
         }
 
-
-
-        //private void Clippy_Load(object sender, EventArgs e)
-        //{
-        //    using (var reader = new StreamReader(path + "workstuff.csv"))
-        //    {
-        //        List<string> information = new List<string>();
-        //        while (!reader.EndOfStream)
-        //        {
-        //            var line = reader.ReadLine();
-        //            var values = line.Split(',');
-
-
-        //            information.Add(values[1]);
-        //        }
-
-        //        CDKey = information[0];
-        //        SQL = information[1];
-        //        RBS = information[2];
-        //        CCLeaner = information[3];
-        //        RegAdd = information[4];
-        //        Community = information[5];
-        //        Pro = information[6];
-        //        ProPlus = information[7];
-        //        NoBackupHeader = information[8];
-        //        NoBackup = information[9];
-        //        ZeroMBHeader = information[10];
-        //        ZeroMB = information[11];
-        //        Permissions = information[12];
-        //    }
-        //}
-
-        private void cmbVersion_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbOne_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
 {
-                int value = cmbVersion.SelectedIndex;
+                int value = cmbOne.SelectedIndex;
                 switch (value)
                 {
                     case 0:
@@ -179,9 +165,9 @@ namespace WebPass
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbTwo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int value = comboBox1.SelectedIndex;
+            int value = cmbTwo.SelectedIndex;
             switch (value)
             {
                 case 0:
@@ -199,6 +185,18 @@ namespace WebPass
                 case 4:
                     Clipboard.SetText(Permissions);
                     break;
+            }
+        }
+
+        public void comboSetItems(String name, int comboBoxNumber)
+        {
+            if (comboBoxNumber == 1)
+            {
+                cmbOne.Items.Add(name);
+            }
+            else
+            {
+                cmbTwo.Items.Add(name);
             }
         }
 
