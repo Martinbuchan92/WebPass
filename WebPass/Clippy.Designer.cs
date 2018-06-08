@@ -56,7 +56,7 @@
             this.btnCDKey.TabIndex = 0;
             this.btnCDKey.Text = "CD Key";
             this.btnCDKey.UseVisualStyleBackColor = true;
-            this.btnCDKey.Click += new System.EventHandler(this.button1_Click);
+            this.btnCDKey.Click += new System.EventHandler(this.Button1_Click);
             // 
             // btnSQL
             // 
@@ -68,7 +68,7 @@
             this.btnSQL.TabIndex = 1;
             this.btnSQL.Text = "SQL";
             this.btnSQL.UseVisualStyleBackColor = true;
-            this.btnSQL.Click += new System.EventHandler(this.btnSQL_Click);
+            this.btnSQL.Click += new System.EventHandler(this.Button2_Click);
             // 
             // btnRBS
             // 
@@ -80,7 +80,7 @@
             this.btnRBS.TabIndex = 2;
             this.btnRBS.Text = "RBS";
             this.btnRBS.UseVisualStyleBackColor = true;
-            this.btnRBS.Click += new System.EventHandler(this.btnRBS_Click);
+            this.btnRBS.Click += new System.EventHandler(this.Button3_Click);
             // 
             // btnCCleaner
             // 
@@ -92,7 +92,7 @@
             this.btnCCleaner.TabIndex = 3;
             this.btnCCleaner.Text = "CCleaner";
             this.btnCCleaner.UseVisualStyleBackColor = true;
-            this.btnCCleaner.Click += new System.EventHandler(this.btnCCleaner_Click);
+            this.btnCCleaner.Click += new System.EventHandler(this.Button4_Click);
             // 
             // btnRegAdd
             // 
@@ -104,7 +104,7 @@
             this.btnRegAdd.TabIndex = 4;
             this.btnRegAdd.Text = "RegAdd";
             this.btnRegAdd.UseVisualStyleBackColor = true;
-            this.btnRegAdd.Click += new System.EventHandler(this.btnRegAdd_Click);
+            this.btnRegAdd.Click += new System.EventHandler(this.Button5_Click);
             // 
             // cmbOne
             // 
@@ -113,10 +113,6 @@
             this.cmbOne.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbOne.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.cmbOne.FormattingEnabled = true;
-            this.cmbOne.Items.AddRange(new object[] {
-            "Community",
-            "Pro",
-            "Pro Plus"});
             this.cmbOne.Location = new System.Drawing.Point(418, 2);
             this.cmbOne.Name = "cmbOne";
             this.cmbOne.Size = new System.Drawing.Size(144, 21);
@@ -199,12 +195,6 @@
             this.cmbTwo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbTwo.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.cmbTwo.FormattingEnabled = true;
-            this.cmbTwo.Items.AddRange(new object[] {
-            "No Backup Header",
-            "No Backup",
-            "Zero mb Header",
-            "No Space",
-            "Permissions"});
             this.cmbTwo.Location = new System.Drawing.Point(418, 30);
             this.cmbTwo.Name = "cmbTwo";
             this.cmbTwo.Size = new System.Drawing.Size(144, 21);

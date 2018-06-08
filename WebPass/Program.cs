@@ -17,8 +17,7 @@ namespace WebPass
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            Clippy a = new Clippy();
+            Clippy a = new Clippy(ClippyIO.Data_Load(@"..\..\savefiles\workstuff2.csv"));
             a.StartPosition = FormStartPosition.Manual;
             a.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width/2) - a.Width/2,
                                    0);

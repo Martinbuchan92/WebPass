@@ -16,7 +16,7 @@ namespace WebPass
     {
         private const String path = @"..\..\savefiles\";
         private bool more = false;
-        List<ItemInfo> items = ClippyIO.Data_Load(path + "workstuff2.csv");
+        List<ItemInfo> items; // = ClippyIO.Data_Load(path + "workstuff2.csv");
 
         //Button set 1
         private String Button1;
@@ -50,63 +50,95 @@ namespace WebPass
             MouseDown += Clippy_MouseDown;
         }
 
-        void MyButtonHandler(ItemInfo item)
+        public Clippy(List<ItemInfo> items) : this()
         {
-            if (item.Type1 == ItemInfo.Type.Clip)
+            this.items = items;
+            Populate_Combo();
+        }
+
+        private void Populate_Combo()
+        {
+            foreach (ItemInfo thing in items)
             {
-                try
+                if (thing.Position1 == ItemInfo.Position.dropDownOne)
                 {
-                    Clipboard.SetText(item.Detail);
+                    cmbOne.Items.Add(thing.Name);
+
                 }
-                catch
+                else if (thing.Position1 == ItemInfo.Position.dropDownTwo)
+                {
+                    cmbTwo.Items.Add(thing.Name);
+                }
+                else
                 {
 
                 }
             }
-            else if(item.Type1 == ItemInfo.Type.File)
-            {
-                try
-                {
-                    Process.Start(item.Detail);
-                }
-                catch
-                {
+        }
 
-                }
-            }else
+        void MyButtonHandler()
+        {
+            //if (item.Type1 == ItemInfo.Type.Clip)
+            //{
+            //    try
+            //    {
+            //        Clipboard.SetText(item.Detail);
+            //    }
+            //    catch
+            //    {
+
+            //    }
+            //}
+            //else if (item.Type1 == ItemInfo.Type.File)
+            //{
+            //    try
+            //    {
+            //        Process.Start(item.Detail);
+            //    }
+            //    catch
+            //    {
+
+            //    }
+            //}
+            //else
+            //{
+            //    Clipboard.SetText(item.Detail);
+            //}
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            if (sender.Equals(btn.Equals( ItemInfo.Return_Details("CD key", items))))
             {
-                Clipboard.SetText(item.Detail);
+                Console.WriteLine("Correct" + sender.ToString());
             }
+            else
+                Console.WriteLine("WRONG" + sender.ToString());
+
+            MyButtonHandler();
+            //Clipboard.SetText("");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
-            //Clipboard.SetText(CDKey);
-            items[2].Detail = "AnotherPassword";
+            Console.WriteLine(sender.ToString());
+           // Clipboard.SetText(Button2);
         }
 
-        private void btnSQL_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(Button2);
-
+            Clipboard.SetText(items[2].Detail);
         }
 
-        private void btnRBS_Click(object sender, EventArgs e)
-        {
-           Clipboard.SetText(items[2].Detail);
-
-        }
-
-        private void btnCCleaner_Click(object sender, EventArgs e)
+        private void Button4_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(Button10);
-
         }
 
-        private void btnRegAdd_Click(object sender, EventArgs e)
+        private void Button5_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(Button5);
-
         }
 
         private void BtnClose_Click(object sender, EventArgs e)
@@ -134,31 +166,19 @@ namespace WebPass
             }
             else
             {
-                this.Size = new Size(this.Width, this.Height/2);
+                this.Size = new Size(this.Width, this.Height / 2);
                 more = false;
             }
-                
+
         }
 
         private void cmbOne_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
-{
-                int value = cmbOne.SelectedIndex;
-                switch (value)
-                {
-                    case 0:
-                        Clipboard.SetText(Community);
-                        break;
-                    case 1:
-                        Clipboard.SetText(Pro);
-                        break;
-                    case 2:
-                        Clipboard.SetText(ProPlus);
-                        break;
-
-                }
-           }
+            {
+                String retrievedDetails = ItemInfo.Return_Details(cmbOne.SelectedItem.ToString(), items);
+                Clipboard.SetText(retrievedDetails);
+            }
             catch (System.Runtime.InteropServices.ExternalException)
             {
 
@@ -167,36 +187,14 @@ namespace WebPass
 
         private void cmbTwo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int value = cmbTwo.SelectedIndex;
-            switch (value)
+            try
             {
-                case 0:
-                    Clipboard.SetText(NoBackupHeader);
-                    break;
-                case 1:
-                    Clipboard.SetText(NoBackup);
-                    break;
-                case 2:
-                    Clipboard.SetText(ZeroMBHeader);
-                    break;
-                case 3:
-                    Clipboard.SetText(ZeroMB);
-                    break;
-                case 4:
-                    Clipboard.SetText(Permissions);
-                    break;
+                String retrievedDetails = ItemInfo.Return_Details(cmbTwo.SelectedItem.ToString(), items);
+                Clipboard.SetText(retrievedDetails);
             }
-        }
+            catch (System.Runtime.InteropServices.ExternalException)
+            {
 
-        public void comboSetItems(String name, int comboBoxNumber)
-        {
-            if (comboBoxNumber == 1)
-            {
-                cmbOne.Items.Add(name);
-            }
-            else
-            {
-                cmbTwo.Items.Add(name);
             }
         }
 
@@ -208,7 +206,7 @@ namespace WebPass
         [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        private void Clippy_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void Clippy_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {

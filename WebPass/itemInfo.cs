@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebPass
 {
-    class ItemInfo
+    public class ItemInfo
     {
         public enum Type {Clip, File, Program}
         public enum Position { button, dropDownOne, dropDownTwo}
@@ -30,6 +30,19 @@ namespace WebPass
             {
                 this.Position1 = result2;
             }
+        }
+
+
+        public static String Return_Details(String item, List<ItemInfo> list)
+        {
+            foreach (ItemInfo thing in list)
+            {
+                if (item == thing.Name) 
+                {
+                    return thing.Detail;
+                }
+            }
+            return "Not Found";
         }
 
         internal Type Type1 { get => type; set => type = value; }
