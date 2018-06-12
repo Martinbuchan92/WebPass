@@ -18,32 +18,6 @@ namespace WebPass
         private bool more = false;
         List<ItemInfo> items; // = ClippyIO.Data_Load(path + "workstuff2.csv");
 
-        //Button set 1
-        private String Button1;
-        private String Button2;
-        private String Button3;
-        private String Button4;
-        private String Button5;
-
-        //Main Dropdown        
-        private String Community;
-        private String Pro;
-        private String ProPlus;
-
-        //Button set 2
-        private String Button6;
-        private String Button7;
-        private String Button8;
-        private String Button9;
-        private String Button10;
-
-        //Second Dropdown
-        private String NoBackupHeader;
-        private String NoBackup;
-        private String ZeroMBHeader;
-        private String ZeroMB;
-        private String Permissions;
-
         public Clippy()
         {
             InitializeComponent();
@@ -76,69 +50,77 @@ namespace WebPass
             }
         }
 
-        void MyButtonHandler()
+        void MyButtonHandler(String selectedPosition)
         {
-            //if (item.Type1 == ItemInfo.Type.Clip)
-            //{
-            //    try
-            //    {
-            //        Clipboard.SetText(item.Detail);
-            //    }
-            //    catch
-            //    {
+            ItemInfo selectedItem = ItemInfo.Details_From_Position(selectedPosition, items);
 
-            //    }
-            //}
-            //else if (item.Type1 == ItemInfo.Type.File)
-            //{
-            //    try
-            //    {
-            //        Process.Start(item.Detail);
-            //    }
-            //    catch
-            //    {
+            if (selectedItem.Type1 == ItemInfo.Type.Clip)
+            {
+                try
+                {
+                    Clipboard.SetText(selectedItem.Detail);
+                }
+                catch
+                {
 
-            //    }
-            //}
-            //else
-            //{
-            //    Clipboard.SetText(item.Detail);
-            //}
+                }
+            }
+            else if (selectedItem.Type1 == ItemInfo.Type.File)
+            {
+                try
+                {
+                    Process.Start(selectedItem.Detail);
+                }
+                catch
+                {
+
+                }
+            }
+            else if (selectedItem.Type1 == ItemInfo.Type.Program)
+            {
+                try
+                {
+                    Process.Start(selectedItem.Detail);
+                }
+                catch
+                {
+
+                }
+            }
+            else
+            {
+                Clipboard.SetText(selectedItem.Detail);
+            }
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            if (sender.Equals(btn.Equals( ItemInfo.Return_Details("CD key", items))))
-            {
-                Console.WriteLine("Correct" + sender.ToString());
-            }
-            else
-                Console.WriteLine("WRONG" + sender.ToString());
-
-            MyButtonHandler();
-            //Clipboard.SetText("");
+            MyButtonHandler(btn.Name.ToString());
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(sender.ToString());
-           // Clipboard.SetText(Button2);
+            Button btn = (Button)sender;
+            MyButtonHandler(btn.Name.ToString());
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(items[2].Detail);
+            Button btn = (Button)sender;
+            MyButtonHandler(btn.Name.ToString());
         }
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(Button10);
+            Button btn = (Button)sender;
+            MyButtonHandler(btn.Name.ToString());
         }
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(Button5);
+            Button btn = (Button)sender;
+            MyButtonHandler(btn.Name.ToString());
         }
 
         private void BtnClose_Click(object sender, EventArgs e)
@@ -149,12 +131,14 @@ namespace WebPass
 
         private void btnNotePad_Click(object sender, EventArgs e)
         {
-            Process.Start(@"C:\Program Files (x86)\Notepad++\notepad++");
+            Button btn = (Button)sender;
+            MyButtonHandler(btn.Name.ToString());
         }
 
         private void btnMedsPro_Click(object sender, EventArgs e)
         {
-            Process.Start(@"S:\Core Team\MedsPro");
+            Button btn = (Button)sender;
+            MyButtonHandler(btn.Name.ToString());
         }
 
         private void btnOther_Click(object sender, EventArgs e)

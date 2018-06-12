@@ -19,10 +19,6 @@ namespace WebPass
 
                     ItemInfo item = new ItemInfo(values[0], values[1], values[2], values[3]);
                     itemInfos.Add(item);
-                    if(item.Position1 == ItemInfo.Position.dropDownOne || item.Position1 == ItemInfo.Position.dropDownTwo)
-                    {
-                        
-                    }
                 }
 
                 return itemInfos;

@@ -9,7 +9,7 @@ namespace WebPass
     public class ItemInfo
     {
         public enum Type {Clip, File, Program}
-        public enum Position { button, dropDownOne, dropDownTwo}
+        public enum Position { ButtonOne, ButtonTwo, ButtonThree, ButtonFour, ButtonFive, ButtonSix, ButtonSeven, ButtonEight, ButtonNine, ButtonTen, dropDownOne, dropDownTwo}
 
         Type type;
         String name;
@@ -43,6 +43,18 @@ namespace WebPass
                 }
             }
             return "Not Found";
+        }
+
+        public static ItemInfo Details_From_Position(String selectedPosition, List<ItemInfo> list)
+        {
+            foreach (ItemInfo thing in list)
+            {
+                if (selectedPosition == thing.Position1.ToString())
+                {
+                    return thing;
+                }
+            }
+            return null;
         }
 
         internal Type Type1 { get => type; set => type = value; }
