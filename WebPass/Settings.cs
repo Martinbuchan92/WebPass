@@ -13,10 +13,16 @@ namespace WebPass
     public partial class Settings : Form
     {
         public OpenFileDialog file;
+        List<ItemInfo> items;
 
         public Settings()
         {
             InitializeComponent();
+        }
+
+        public Settings(List<ItemInfo> items) : this()
+        {
+            this.items = items;
         }
 
         private void Settings_Load(object sender, EventArgs e)
@@ -78,6 +84,26 @@ namespace WebPass
             if (file.ShowDialog() == DialogResult.OK)
             {
                 txtFilePath.Text = file.SafeFileName;
+            }
+        }
+
+        private void CmbItemSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           ItemInfo selectedItem = ItemInfo.Details_From_Position(CmbItemSelect.SelectedItem.ToString(), items);
+           FillSettingsForm(selectedItem);
+        }
+
+        private void FillSettingsForm(ItemInfo selectedItem)
+        {
+            if(selectedItem.Type1 == ItemInfo.Type.Clip)
+            {
+                rbClipboard.Select();
+            }else if(selectedItem.Type1 == ItemInfo.Type.File)
+            {
+
+            }else if(selectedItem.Type1 == ItemInfo.Type.Program)
+            {
+
             }
         }
     }

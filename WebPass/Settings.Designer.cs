@@ -204,6 +204,7 @@
             this.CmbItemSelect.Name = "CmbItemSelect";
             this.CmbItemSelect.Size = new System.Drawing.Size(204, 21);
             this.CmbItemSelect.TabIndex = 22;
+            this.CmbItemSelect.SelectedIndexChanged += new System.EventHandler(this.CmbItemSelect_SelectedIndexChanged);
             // 
             // label5
             // 
