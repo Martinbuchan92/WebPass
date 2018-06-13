@@ -29,99 +29,95 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clippy));
-            this.btnCDKey = new System.Windows.Forms.Button();
-            this.btnSQL = new System.Windows.Forms.Button();
-            this.btnRBS = new System.Windows.Forms.Button();
-            this.btnCCleaner = new System.Windows.Forms.Button();
-            this.btnRegAdd = new System.Windows.Forms.Button();
-            this.cmbVersion = new System.Windows.Forms.ComboBox();
+            this.ButtonOne = new System.Windows.Forms.Button();
+            this.ButtonTwo = new System.Windows.Forms.Button();
+            this.ButtonThree = new System.Windows.Forms.Button();
+            this.ButtonTen = new System.Windows.Forms.Button();
+            this.ButtonFive = new System.Windows.Forms.Button();
+            this.cmbOne = new System.Windows.Forms.ComboBox();
             this.btnOther = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnMedsPro = new System.Windows.Forms.Button();
-            this.btnNotePad = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.ButtonSix = new System.Windows.Forms.Button();
+            this.ButtonSeven = new System.Windows.Forms.Button();
+            this.ButtonEight = new System.Windows.Forms.Button();
+            this.ButtonNine = new System.Windows.Forms.Button();
+            this.ButtonFour = new System.Windows.Forms.Button();
+            this.cmbTwo = new System.Windows.Forms.ComboBox();
             this.BtnClose = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnCDKey
+            // ButtonOne
             // 
-            this.btnCDKey.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCDKey.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCDKey.Location = new System.Drawing.Point(13, 3);
-            this.btnCDKey.Name = "btnCDKey";
-            this.btnCDKey.Size = new System.Drawing.Size(75, 21);
-            this.btnCDKey.TabIndex = 0;
-            this.btnCDKey.Text = "CD Key";
-            this.btnCDKey.UseVisualStyleBackColor = true;
-            this.btnCDKey.Click += new System.EventHandler(this.button1_Click);
+            this.ButtonOne.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ButtonOne.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ButtonOne.Location = new System.Drawing.Point(13, 3);
+            this.ButtonOne.Name = "ButtonOne";
+            this.ButtonOne.Size = new System.Drawing.Size(75, 21);
+            this.ButtonOne.TabIndex = 0;
+            this.ButtonOne.Text = "CD Key";
+            this.ButtonOne.UseVisualStyleBackColor = true;
+            this.ButtonOne.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // btnSQL
+            // ButtonTwo
             // 
-            this.btnSQL.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSQL.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSQL.Location = new System.Drawing.Point(94, 3);
-            this.btnSQL.Name = "btnSQL";
-            this.btnSQL.Size = new System.Drawing.Size(75, 21);
-            this.btnSQL.TabIndex = 1;
-            this.btnSQL.Text = "SQL";
-            this.btnSQL.UseVisualStyleBackColor = true;
-            this.btnSQL.Click += new System.EventHandler(this.btnSQL_Click);
+            this.ButtonTwo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ButtonTwo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ButtonTwo.Location = new System.Drawing.Point(94, 3);
+            this.ButtonTwo.Name = "ButtonTwo";
+            this.ButtonTwo.Size = new System.Drawing.Size(75, 21);
+            this.ButtonTwo.TabIndex = 1;
+            this.ButtonTwo.Text = "SQL";
+            this.ButtonTwo.UseVisualStyleBackColor = true;
+            this.ButtonTwo.Click += new System.EventHandler(this.Button2_Click);
             // 
-            // btnRBS
+            // ButtonThree
             // 
-            this.btnRBS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRBS.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnRBS.Location = new System.Drawing.Point(175, 3);
-            this.btnRBS.Name = "btnRBS";
-            this.btnRBS.Size = new System.Drawing.Size(75, 21);
-            this.btnRBS.TabIndex = 2;
-            this.btnRBS.Text = "RBS";
-            this.btnRBS.UseVisualStyleBackColor = true;
-            this.btnRBS.Click += new System.EventHandler(this.btnRBS_Click);
+            this.ButtonThree.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ButtonThree.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ButtonThree.Location = new System.Drawing.Point(175, 3);
+            this.ButtonThree.Name = "ButtonThree";
+            this.ButtonThree.Size = new System.Drawing.Size(75, 21);
+            this.ButtonThree.TabIndex = 2;
+            this.ButtonThree.Text = "RBS";
+            this.ButtonThree.UseVisualStyleBackColor = true;
+            this.ButtonThree.Click += new System.EventHandler(this.Button3_Click);
             // 
-            // btnCCleaner
+            // ButtonTen
             // 
-            this.btnCCleaner.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCCleaner.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCCleaner.Location = new System.Drawing.Point(337, 30);
-            this.btnCCleaner.Name = "btnCCleaner";
-            this.btnCCleaner.Size = new System.Drawing.Size(75, 21);
-            this.btnCCleaner.TabIndex = 3;
-            this.btnCCleaner.Text = "CCleaner";
-            this.btnCCleaner.UseVisualStyleBackColor = true;
-            this.btnCCleaner.Click += new System.EventHandler(this.btnCCleaner_Click);
+            this.ButtonTen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ButtonTen.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ButtonTen.Location = new System.Drawing.Point(337, 30);
+            this.ButtonTen.Name = "ButtonTen";
+            this.ButtonTen.Size = new System.Drawing.Size(75, 21);
+            this.ButtonTen.TabIndex = 3;
+            this.ButtonTen.Text = "CCleaner";
+            this.ButtonTen.UseVisualStyleBackColor = true;
+            this.ButtonTen.Click += new System.EventHandler(this.Button4_Click);
             // 
-            // btnRegAdd
+            // ButtonFive
             // 
-            this.btnRegAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRegAdd.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnRegAdd.Location = new System.Drawing.Point(337, 3);
-            this.btnRegAdd.Name = "btnRegAdd";
-            this.btnRegAdd.Size = new System.Drawing.Size(75, 21);
-            this.btnRegAdd.TabIndex = 4;
-            this.btnRegAdd.Text = "RegAdd";
-            this.btnRegAdd.UseVisualStyleBackColor = true;
-            this.btnRegAdd.Click += new System.EventHandler(this.btnRegAdd_Click);
+            this.ButtonFive.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ButtonFive.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ButtonFive.Location = new System.Drawing.Point(337, 3);
+            this.ButtonFive.Name = "ButtonFive";
+            this.ButtonFive.Size = new System.Drawing.Size(75, 21);
+            this.ButtonFive.TabIndex = 4;
+            this.ButtonFive.Text = "RegAdd";
+            this.ButtonFive.UseVisualStyleBackColor = true;
+            this.ButtonFive.Click += new System.EventHandler(this.Button5_Click);
             // 
-            // cmbVersion
+            // cmbOne
             // 
-            this.cmbVersion.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.cmbVersion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbVersion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmbVersion.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.cmbVersion.FormattingEnabled = true;
-            this.cmbVersion.Items.AddRange(new object[] {
-            "Community",
-            "Pro",
-            "Pro Plus"});
-            this.cmbVersion.Location = new System.Drawing.Point(418, 2);
-            this.cmbVersion.Name = "cmbVersion";
-            this.cmbVersion.Size = new System.Drawing.Size(144, 21);
-            this.cmbVersion.TabIndex = 5;
-            this.cmbVersion.SelectedIndexChanged += new System.EventHandler(this.cmbVersion_SelectedIndexChanged);
+            this.cmbOne.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.cmbOne.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbOne.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbOne.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.cmbOne.FormattingEnabled = true;
+            this.cmbOne.Location = new System.Drawing.Point(418, 2);
+            this.cmbOne.Name = "cmbOne";
+            this.cmbOne.Size = new System.Drawing.Size(144, 21);
+            this.cmbOne.TabIndex = 5;
+            this.cmbOne.SelectedIndexChanged += new System.EventHandler(this.cmbOne_SelectedIndexChanged);
             // 
             // btnOther
             // 
@@ -135,81 +131,75 @@
             this.btnOther.UseVisualStyleBackColor = true;
             this.btnOther.Click += new System.EventHandler(this.btnOther_Click);
             // 
-            // button1
+            // ButtonSix
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(13, 30);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 21);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "One";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ButtonSix.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ButtonSix.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ButtonSix.Location = new System.Drawing.Point(13, 30);
+            this.ButtonSix.Name = "ButtonSix";
+            this.ButtonSix.Size = new System.Drawing.Size(75, 21);
+            this.ButtonSix.TabIndex = 7;
+            this.ButtonSix.Text = "One";
+            this.ButtonSix.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // ButtonSeven
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(94, 30);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 21);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Two";
-            this.button2.UseVisualStyleBackColor = true;
+            this.ButtonSeven.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ButtonSeven.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ButtonSeven.Location = new System.Drawing.Point(94, 30);
+            this.ButtonSeven.Name = "ButtonSeven";
+            this.ButtonSeven.Size = new System.Drawing.Size(75, 21);
+            this.ButtonSeven.TabIndex = 8;
+            this.ButtonSeven.Text = "Two";
+            this.ButtonSeven.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // ButtonEight
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(175, 30);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 21);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Three";
-            this.button3.UseVisualStyleBackColor = true;
+            this.ButtonEight.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ButtonEight.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ButtonEight.Location = new System.Drawing.Point(175, 30);
+            this.ButtonEight.Name = "ButtonEight";
+            this.ButtonEight.Size = new System.Drawing.Size(75, 21);
+            this.ButtonEight.TabIndex = 9;
+            this.ButtonEight.Text = "Three";
+            this.ButtonEight.UseVisualStyleBackColor = true;
             // 
-            // btnMedsPro
+            // ButtonNine
             // 
-            this.btnMedsPro.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMedsPro.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnMedsPro.Location = new System.Drawing.Point(256, 30);
-            this.btnMedsPro.Name = "btnMedsPro";
-            this.btnMedsPro.Size = new System.Drawing.Size(75, 21);
-            this.btnMedsPro.TabIndex = 10;
-            this.btnMedsPro.Text = "MedsPro";
-            this.btnMedsPro.UseVisualStyleBackColor = true;
-            this.btnMedsPro.Click += new System.EventHandler(this.btnMedsPro_Click);
+            this.ButtonNine.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ButtonNine.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ButtonNine.Location = new System.Drawing.Point(256, 30);
+            this.ButtonNine.Name = "ButtonNine";
+            this.ButtonNine.Size = new System.Drawing.Size(75, 21);
+            this.ButtonNine.TabIndex = 10;
+            this.ButtonNine.Text = "MedsPro";
+            this.ButtonNine.UseVisualStyleBackColor = true;
+            this.ButtonNine.Click += new System.EventHandler(this.btnMedsPro_Click);
             // 
-            // btnNotePad
+            // ButtonFour
             // 
-            this.btnNotePad.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNotePad.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnNotePad.Location = new System.Drawing.Point(256, 3);
-            this.btnNotePad.Name = "btnNotePad";
-            this.btnNotePad.Size = new System.Drawing.Size(75, 21);
-            this.btnNotePad.TabIndex = 11;
-            this.btnNotePad.Text = "NotePad++";
-            this.btnNotePad.UseVisualStyleBackColor = true;
-            this.btnNotePad.Click += new System.EventHandler(this.btnNotePad_Click);
+            this.ButtonFour.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ButtonFour.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ButtonFour.Location = new System.Drawing.Point(256, 3);
+            this.ButtonFour.Name = "ButtonFour";
+            this.ButtonFour.Size = new System.Drawing.Size(75, 21);
+            this.ButtonFour.TabIndex = 11;
+            this.ButtonFour.Text = "NotePad++";
+            this.ButtonFour.UseVisualStyleBackColor = true;
+            this.ButtonFour.Click += new System.EventHandler(this.btnNotePad_Click);
             // 
-            // comboBox1
+            // cmbTwo
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "No Backup Header",
-            "No Backup",
-            "Zero mb Header",
-            "No Space",
-            "Permissions"});
-            this.comboBox1.Location = new System.Drawing.Point(418, 30);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(144, 21);
-            this.comboBox1.TabIndex = 15;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbTwo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.cmbTwo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTwo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbTwo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.cmbTwo.FormattingEnabled = true;
+            this.cmbTwo.Location = new System.Drawing.Point(418, 30);
+            this.cmbTwo.Name = "cmbTwo";
+            this.cmbTwo.Size = new System.Drawing.Size(144, 21);
+            this.cmbTwo.TabIndex = 15;
+            this.cmbTwo.SelectedIndexChanged += new System.EventHandler(this.cmbTwo_SelectedIndexChanged);
             // 
             // BtnClose
             // 
@@ -245,20 +235,20 @@
             this.CancelButton = this.BtnClose;
             this.ClientSize = new System.Drawing.Size(664, 54);
             this.Controls.Add(this.btnSettings);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbTwo);
             this.Controls.Add(this.BtnClose);
-            this.Controls.Add(this.btnNotePad);
-            this.Controls.Add(this.btnMedsPro);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ButtonFour);
+            this.Controls.Add(this.ButtonNine);
+            this.Controls.Add(this.ButtonEight);
+            this.Controls.Add(this.ButtonSeven);
+            this.Controls.Add(this.ButtonSix);
             this.Controls.Add(this.btnOther);
-            this.Controls.Add(this.cmbVersion);
-            this.Controls.Add(this.btnRegAdd);
-            this.Controls.Add(this.btnCCleaner);
-            this.Controls.Add(this.btnRBS);
-            this.Controls.Add(this.btnSQL);
-            this.Controls.Add(this.btnCDKey);
+            this.Controls.Add(this.cmbOne);
+            this.Controls.Add(this.ButtonFive);
+            this.Controls.Add(this.ButtonTen);
+            this.Controls.Add(this.ButtonThree);
+            this.Controls.Add(this.ButtonTwo);
+            this.Controls.Add(this.ButtonOne);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Clippy";
@@ -266,28 +256,27 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Clippy";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.Clippy_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnCDKey;
-        private System.Windows.Forms.Button btnSQL;
-        private System.Windows.Forms.Button btnRBS;
-        private System.Windows.Forms.Button btnCCleaner;
-        private System.Windows.Forms.Button btnRegAdd;
-        private System.Windows.Forms.ComboBox cmbVersion;
+        private System.Windows.Forms.Button ButtonOne;
+        private System.Windows.Forms.Button ButtonTwo;
+        private System.Windows.Forms.Button ButtonThree;
+        private System.Windows.Forms.Button ButtonTen;
+        private System.Windows.Forms.Button ButtonFive;
         private System.Windows.Forms.Button btnOther;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button btnMedsPro;
-        private System.Windows.Forms.Button btnNotePad;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button ButtonSix;
+        private System.Windows.Forms.Button ButtonSeven;
+        private System.Windows.Forms.Button ButtonEight;
+        private System.Windows.Forms.Button ButtonNine;
+        private System.Windows.Forms.Button ButtonFour;
         private System.Windows.Forms.Button BtnClose;
         private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.ComboBox cmbOne;
+        private System.Windows.Forms.ComboBox cmbTwo;
     }
 }
 

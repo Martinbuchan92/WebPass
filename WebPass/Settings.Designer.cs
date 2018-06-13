@@ -60,6 +60,7 @@
             this.button2.TabIndex = 21;
             this.button2.Text = "...";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // label4
             // 
@@ -203,6 +204,7 @@
             this.CmbItemSelect.Name = "CmbItemSelect";
             this.CmbItemSelect.Size = new System.Drawing.Size(204, 21);
             this.CmbItemSelect.TabIndex = 22;
+            this.CmbItemSelect.SelectedIndexChanged += new System.EventHandler(this.CmbItemSelect_SelectedIndexChanged);
             // 
             // label5
             // 
