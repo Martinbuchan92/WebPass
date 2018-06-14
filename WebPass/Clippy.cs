@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WebPass
@@ -16,7 +10,7 @@ namespace WebPass
     {
         private const String path = @"..\..\savefiles\";
         private bool more = false;
-        List<ItemInfo> items; // = ClippyIO.Data_Load(path + "workstuff2.csv");
+        List<ItemInfo> items;
 
         public Clippy()
         {
@@ -24,10 +18,18 @@ namespace WebPass
             MouseDown += Clippy_MouseDown;
         }
 
-        public Clippy(List<ItemInfo> items) : this()
+        public Clippy(List<List<ItemInfo>> myList) : this()
         {
-            this.items = items;
-            Populate_Combo();
+            foreach (List<ItemInfo> sublist in myList)
+            {
+                foreach(ItemInfo thing in sublist)
+                {
+                    this.items.Add(thing);
+                    Populate_Combo();
+                }
+            }
+
+
         }
 
         private void Populate_Combo()
@@ -201,7 +203,7 @@ namespace WebPass
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            Settings setting = new Settings();
+            Settings setting = new Settings(items);
             setting.Show();
         }
     }

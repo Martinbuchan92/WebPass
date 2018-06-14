@@ -23,11 +23,15 @@ namespace WebPass
         public Settings(List<ItemInfo> items) : this()
         {
             this.items = items;
+
         }
 
         private void Settings_Load(object sender, EventArgs e)
         {
-
+            foreach (ItemInfo thing in items)
+            {
+                CmbItemSelect.Items.Add(thing.Position1);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -95,16 +99,31 @@ namespace WebPass
 
         private void FillSettingsForm(ItemInfo selectedItem)
         {
-            if(selectedItem.Type1 == ItemInfo.Type.Clip)
+            if (selectedItem.Type1 == ItemInfo.Type.Clip)
             {
-                rbClipboard.Select();
-            }else if(selectedItem.Type1 == ItemInfo.Type.File)
-            {
-
-            }else if(selectedItem.Type1 == ItemInfo.Type.Program)
-            {
-
+                clearboxes();
+                rbClipboard.Checked = true;
+                txtClipboard.Text = selectedItem.Detail;
             }
+            else if (selectedItem.Type1 == ItemInfo.Type.File)
+            {
+                clearboxes();
+                rbOpenFile.Checked = true;
+                txtFilePath.Text = selectedItem.Detail;
+            }
+            else if (selectedItem.Type1 == ItemInfo.Type.Program)
+            {
+                clearboxes();
+                rbOpenSoftware.Checked = true;
+                txtProgramPath.Text = selectedItem.Detail;
+            }
+        }
+
+        private void clearboxes()
+        {
+            txtClipboard.Text = "";
+            txtFilePath.Text = "";
+            txtProgramPath.Text = "";
         }
     }
 }

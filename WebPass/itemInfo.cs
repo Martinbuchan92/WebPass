@@ -15,6 +15,7 @@ namespace WebPass
         String name;
         String detail;
         Position position;
+        int location;
 
         public ItemInfo(String type, String name, String position, String detail)
         {
@@ -32,6 +33,10 @@ namespace WebPass
             }
         }
 
+        public ItemInfo(String type, String name, String position, String detail, int location) : this(type, name, position, detail)
+        {
+            this.location = location;
+        }
 
         public static String Return_Details(String item, List<ItemInfo> list)
         {
@@ -61,5 +66,11 @@ namespace WebPass
         public string Name { get => name; set => name = value; }
         public string Detail { get => detail; set => detail = value; }
         internal Position Position1 { get => position; set => position = value; }
+        public int Location { get => location; set => location = value; }
+
+        public static implicit operator List<object>(ItemInfo v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
