@@ -10,7 +10,7 @@ namespace WebPass
     {
         private const String path = @"..\..\savefiles\";
         private bool more = false;
-        List<ItemInfo> items;
+        List<ItemInfo> items = new List<ItemInfo>();
 
         public Clippy()
         {
@@ -24,12 +24,10 @@ namespace WebPass
             {
                 foreach(ItemInfo thing in sublist)
                 {
-                    this.items.Add(thing);
-                    Populate_Combo();
+                    items.Add(thing);
                 }
             }
-
-
+            Populate_Combo();
         }
 
         private void Populate_Combo()
@@ -127,7 +125,7 @@ namespace WebPass
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
-            ClippyIO.Data_Save(items, path + "workstuff2.csv");
+            //ClippyIO.Data_Save(items, path + "workstuff2.csv");
             this.Close();
         }
 

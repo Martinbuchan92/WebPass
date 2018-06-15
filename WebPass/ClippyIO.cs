@@ -22,24 +22,26 @@ namespace WebPass
 
                     if (values[2].ToString() == "dropDownOne")
                     {
-                        Console.WriteLine(values[4]);
-                        ItemInfo item = new ItemInfo(values[0], values[1], values[2], values[3], int.Parse(values[4]));
-                        dropDown1.Add(item);
+                        ItemInfo dd1 = new ItemInfo(values[0], values[1], values[2], values[3], int.Parse(values[4]));
+                        dropDown1.Add(dd1);
                     }
                     else if (values[2].ToString() == "dropDownTwo")
                     {
-                        ItemInfo item = new ItemInfo(values[0], values[1], values[2], values[3], int.Parse(values[4]));
-                        dropDown2.Add(item);
+                        ItemInfo dd2 = new ItemInfo(values[0], values[1], values[2], values[3], int.Parse(values[4]));
+                        dropDown2.Add(dd2);
                     }
                     else
                     {
                         ItemInfo item = new ItemInfo(values[0], values[1], values[2], values[3]);
                         itemInfos.Add(item);
-                        listList.Add(dropDown1);
-                        listList.Add(dropDown2);
-                        listList.Add(itemInfos);
+
                     }
+
                 }
+                listList.Add(dropDown1);
+                listList.Add(dropDown2);
+                listList.Add(itemInfos);
+
                 return listList;
             }
         }
