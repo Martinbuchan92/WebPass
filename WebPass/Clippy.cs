@@ -126,6 +126,7 @@ namespace WebPass
         private void BtnClose_Click(object sender, EventArgs e)
         {
             //ClippyIO.Data_Save(items, path + "workstuff2.csv");
+            ClippyIO.Data_XML_Save(items, path + "saveDetails.xml");
             this.Close();
         }
 
@@ -203,6 +204,11 @@ namespace WebPass
         {
             Settings setting = new Settings(items);
             setting.Show();
+        }
+
+        private void ButtonSix_Click(object sender, EventArgs e)
+        {
+            ClippyIO.Data_XML_Load(@"C:\Users\martin.buchan\source\repos\WebPass\WebPass\savefiles\saveDetails.xml");
         }
     }
 }

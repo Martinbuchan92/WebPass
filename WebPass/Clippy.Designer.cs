@@ -141,6 +141,7 @@
             this.ButtonSix.TabIndex = 7;
             this.ButtonSix.Text = "One";
             this.ButtonSix.UseVisualStyleBackColor = true;
+            this.ButtonSix.Click += new System.EventHandler(this.ButtonSix_Click);
             // 
             // ButtonSeven
             // 
