@@ -33,9 +33,8 @@ namespace WebPass
                     }
                     else
                     {
-                        ItemInfo item = new ItemInfo(values[0], values[1], values[2], values[3]);
+                        ItemInfo item = new ItemInfo(values[0], values[1], values[2], values[3], int.Parse(values[4]));
                         itemInfos.Add(item);
-
                     }
 
                 }
@@ -53,67 +52,59 @@ namespace WebPass
             {
                 foreach (ItemInfo thing in item)
                 {
-                    if (thing.Position1.Equals("dropDownOne") || thing.Position1.Equals("dropDownTwo"))
-                    {
-                        var line = thing.Type1 + "," + thing.Name + "," + thing.Position1 + "," + thing.Detail + "," + thing.Location;
-                        writer.WriteLine(line);
-                    }
-                    else
-                    {
-                        var line = thing.Type1 + "," + thing.Name + "," + thing.Position1 + "," + thing.Detail;
-                        writer.WriteLine(line);
-                    }
+                    var line = thing.Type1 + "," + thing.Name + "," + thing.Position1 + "," + thing.Detail + "," + thing.Location;
+                    writer.WriteLine(line);
                 }
             }
             Console.WriteLine("saved");
             return true;
         }
 
-        public static List<List<ItemInfo>> Data_XML_Load(String path)
-        {
-            XmlReader reader = XmlReader.Create(path);
-            while (reader.Read())
-            {
-                if((reader.NodeType == XmlNodeType.Element) && (reader.Name == "Item"))
-                {
-                    if (reader.HasAttributes)
-                        Console.WriteLine(reader.GetAttribute("Name"));
-                }
-            }
+        //public static List<List<ItemInfo>> Data_XML_Load(String path)
+        //{
+        //    XmlReader reader = XmlReader.Create(path);
+        //    while (reader.Read())
+        //    {
+        //        if((reader.NodeType == XmlNodeType.Element) && (reader.Name == "Item"))
+        //        {
+        //            if (reader.HasAttributes)
+        //                Console.WriteLine(reader.GetAttribute("Name"));
+        //        }
+        //    }
 
-            return null;
-        }
+        //    return null;
+        //}
 
-        public static Boolean Data_XML_Save(List<ItemInfo> item, String path)
-        {
-            using (XmlWriter xmlFile = XmlWriter.Create(path))
-            {
-                xmlFile.WriteStartDocument();
-                xmlFile.WriteStartElement("Items");
+        //public static Boolean Data_XML_Save(List<ItemInfo> item, String path)
+        //{
+        //    using (XmlWriter xmlFile = XmlWriter.Create(path))
+        //    {
+        //        xmlFile.WriteStartDocument();
+        //        xmlFile.WriteStartElement("Items");
 
-                foreach (ItemInfo thing in item)
-                {
+        //        foreach (ItemInfo thing in item)
+        //        {
 
-                    xmlFile.WriteStartElement("Item");
+        //            xmlFile.WriteStartElement("Item");
 
-                    xmlFile.WriteElementString("Type", thing.Type1.ToString());
-                    xmlFile.WriteElementString("Name", thing.Name);
-                    xmlFile.WriteElementString("Position", thing.Position1.ToString());
-                    xmlFile.WriteElementString("Details", thing.Detail);
-                    if (thing.Location != 0)
-                    {
-                        xmlFile.WriteElementString("Location", thing.Location.ToString());
-                    }
+        //            xmlFile.WriteElementString("Type", thing.Type1.ToString());
+        //            xmlFile.WriteElementString("Name", thing.Name);
+        //            xmlFile.WriteElementString("Position", thing.Position1.ToString());
+        //            xmlFile.WriteElementString("Details", thing.Detail);
+        //            if (thing.Location != 0)
+        //            {
+        //                xmlFile.WriteElementString("Location", thing.Location.ToString());
+        //            }
 
-                    xmlFile.WriteEndElement();
+        //            xmlFile.WriteEndElement();
 
-                }
+        //        }
 
-                xmlFile.WriteEndElement();
-                xmlFile.WriteEndDocument();
+        //        xmlFile.WriteEndElement();
+        //        xmlFile.WriteEndDocument();
 
-            }
-            return true;
-        }
+        //    }
+        //    return true;
+        //}
     }
 }

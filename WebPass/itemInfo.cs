@@ -50,11 +50,11 @@ namespace WebPass
             return "Not Found";
         }
 
-        public static ItemInfo Details_From_Position(String selectedPosition, List<ItemInfo> list)
+        public static ItemInfo Details_From_Position(String selectedPosition, int Location, List<ItemInfo> list)
         {
             foreach (ItemInfo thing in list)
             {
-                if (selectedPosition == thing.Position1.ToString())
+                if (selectedPosition == thing.Position1.ToString() && Location == thing.Location)
                 {
                     return thing;
                 }

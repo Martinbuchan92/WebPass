@@ -45,6 +45,10 @@
             this.CmbItemSelect = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtClipboard = new System.Windows.Forms.TextBox();
+            this.CmbItemSelect2 = new System.Windows.Forms.ComboBox();
+            this.BtnSave = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +58,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(245, 117);
+            this.button2.Location = new System.Drawing.Point(245, 149);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(35, 20);
             this.button2.TabIndex = 21;
@@ -65,7 +69,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 120);
+            this.label4.Location = new System.Drawing.Point(9, 152);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(23, 13);
             this.label4.TabIndex = 20;
@@ -73,14 +77,14 @@
             // 
             // txtFilePath
             // 
-            this.txtFilePath.Location = new System.Drawing.Point(76, 117);
+            this.txtFilePath.Location = new System.Drawing.Point(76, 149);
             this.txtFilePath.Name = "txtFilePath";
             this.txtFilePath.Size = new System.Drawing.Size(163, 20);
             this.txtFilePath.TabIndex = 19;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(245, 143);
+            this.button1.Location = new System.Drawing.Point(245, 175);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(35, 20);
             this.button1.TabIndex = 18;
@@ -90,7 +94,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 146);
+            this.label3.Location = new System.Drawing.Point(9, 178);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 17;
@@ -98,7 +102,7 @@
             // 
             // txtProgramPath
             // 
-            this.txtProgramPath.Location = new System.Drawing.Point(76, 143);
+            this.txtProgramPath.Location = new System.Drawing.Point(76, 175);
             this.txtProgramPath.Name = "txtProgramPath";
             this.txtProgramPath.Size = new System.Drawing.Size(163, 20);
             this.txtProgramPath.TabIndex = 16;
@@ -108,7 +112,7 @@
             this.groupBox1.Controls.Add(this.rbOpenSoftware);
             this.groupBox1.Controls.Add(this.rbOpenFile);
             this.groupBox1.Controls.Add(this.rbClipboard);
-            this.groupBox1.Location = new System.Drawing.Point(9, 39);
+            this.groupBox1.Location = new System.Drawing.Point(9, 71);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(294, 46);
             this.groupBox1.TabIndex = 15;
@@ -154,7 +158,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 172);
+            this.label2.Location = new System.Drawing.Point(9, 204);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 13;
@@ -162,7 +166,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(76, 91);
+            this.txtName.Location = new System.Drawing.Point(76, 123);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(163, 20);
             this.txtName.TabIndex = 12;
@@ -170,7 +174,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 94);
+            this.label1.Location = new System.Drawing.Point(9, 126);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 11;
@@ -197,17 +201,60 @@
             // 
             // txtClipboard
             // 
-            this.txtClipboard.Location = new System.Drawing.Point(76, 172);
+            this.txtClipboard.Location = new System.Drawing.Point(76, 204);
             this.txtClipboard.Multiline = true;
             this.txtClipboard.Name = "txtClipboard";
             this.txtClipboard.Size = new System.Drawing.Size(227, 109);
             this.txtClipboard.TabIndex = 24;
             // 
+            // CmbItemSelect2
+            // 
+            this.CmbItemSelect2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbItemSelect2.FormattingEnabled = true;
+            this.CmbItemSelect2.Location = new System.Drawing.Point(76, 39);
+            this.CmbItemSelect2.Name = "CmbItemSelect2";
+            this.CmbItemSelect2.Size = new System.Drawing.Size(227, 21);
+            this.CmbItemSelect2.TabIndex = 25;
+            this.CmbItemSelect2.SelectedIndexChanged += new System.EventHandler(this.CmbItemSelect2_SelectedIndexChanged);
+            // 
+            // BtnSave
+            // 
+            this.BtnSave.Location = new System.Drawing.Point(66, 333);
+            this.BtnSave.Name = "BtnSave";
+            this.BtnSave.Size = new System.Drawing.Size(75, 23);
+            this.BtnSave.TabIndex = 26;
+            this.BtnSave.Text = "Save";
+            this.BtnSave.UseVisualStyleBackColor = true;
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(147, 333);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 27;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(228, 333);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 28;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(317, 293);
+            this.ClientSize = new System.Drawing.Size(316, 368);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.BtnSave);
+            this.Controls.Add(this.CmbItemSelect2);
             this.Controls.Add(this.txtClipboard);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CmbItemSelect);
@@ -249,5 +296,9 @@
         private System.Windows.Forms.ComboBox CmbItemSelect;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtClipboard;
+        private System.Windows.Forms.ComboBox CmbItemSelect2;
+        private System.Windows.Forms.Button BtnSave;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnClose;
     }
 }

@@ -11,6 +11,7 @@ namespace WebPass
         private const String path = @"..\..\savefiles\";
         private bool more = false;
         List<ItemInfo> items = new List<ItemInfo>();
+        List<ItemInfo.Position> positions = new List<ItemInfo.Position>();
 
         public Clippy()
         {
@@ -28,6 +29,30 @@ namespace WebPass
                 }
             }
             Populate_Combo();
+            Button_namer("ButtonOne", ButtonOne);
+            Button_namer("ButtonTwo", ButtonTwo);
+            Button_namer("ButtonThree", ButtonThree);
+            Button_namer("ButtonFour", ButtonFour);
+            Button_namer("ButtonFive", ButtonFive);
+            Button_namer("ButtonSix", ButtonSix);
+            Button_namer("ButtonSeven", ButtonSeven);
+            Button_namer("ButtonEight", ButtonEight);
+            Button_namer("ButtonNine", ButtonNine);
+            Button_namer("ButtonTen", ButtonTen);
+
+        }
+
+        public void Button_namer(String btnName, Button selectedBtn)
+        {
+            foreach(ItemInfo thing in items)
+            {
+                if (thing.Position1.ToString().Equals(btnName))
+                {
+                    ToolTip test = new ToolTip();
+                    selectedBtn.Text = thing.Name;
+                    test.SetToolTip(selectedBtn, thing.Detail);
+                }
+            }
         }
 
         private void Populate_Combo()
@@ -52,7 +77,7 @@ namespace WebPass
 
         void MyButtonHandler(String selectedPosition)
         {
-            ItemInfo selectedItem = ItemInfo.Details_From_Position(selectedPosition, items);
+            ItemInfo selectedItem = ItemInfo.Details_From_Position(selectedPosition, 0, items);
 
             if (selectedItem.Type1 == ItemInfo.Type.Clip)
             {
@@ -92,55 +117,25 @@ namespace WebPass
                 Clipboard.SetText(selectedItem.Detail);
             }
         }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            MyButtonHandler(btn.Name.ToString());
-        }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            MyButtonHandler(btn.Name.ToString());
-        }
-
-        private void Button3_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            MyButtonHandler(btn.Name.ToString());
-        }
-
-        private void Button4_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            MyButtonHandler(btn.Name.ToString());
-        }
-
-        private void Button5_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            MyButtonHandler(btn.Name.ToString());
-        }
+        
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
-            //ClippyIO.Data_Save(items, path + "workstuff2.csv");
-            ClippyIO.Data_XML_Save(items, path + "saveDetails.xml");
+            ClippyIO.Data_Save(items, path + "workstuff2.csv");
             this.Close();
         }
 
-        private void btnNotePad_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            MyButtonHandler(btn.Name.ToString());
-        }
+        //private void btnNotePad_Click(object sender, EventArgs e)
+        //{
+        //    Button btn = (Button)sender;
+        //    MyButtonHandler(btn.Name.ToString());
+        //}
 
-        private void btnMedsPro_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            MyButtonHandler(btn.Name.ToString());
-        }
+        //private void btnMedsPro_Click(object sender, EventArgs e)
+        //{
+        //    Button btn = (Button)sender;
+        //    MyButtonHandler(btn.Name.ToString());
+        //}
 
         private void btnOther_Click(object sender, EventArgs e)
         {
@@ -203,12 +198,73 @@ namespace WebPass
         private void btnSettings_Click(object sender, EventArgs e)
         {
             Settings setting = new Settings(items);
+            this.Hide();
             setting.Show();
+        }
+
+        private void Clippy_Load(object sender, EventArgs e)
+        {
+            this.Height = 27;
+        }
+
+        #region buttons
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            MyButtonHandler(btn.Name.ToString());
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            MyButtonHandler(btn.Name.ToString());
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            MyButtonHandler(btn.Name.ToString());
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            MyButtonHandler(btn.Name.ToString());
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            MyButtonHandler(btn.Name.ToString());
         }
 
         private void ButtonSix_Click(object sender, EventArgs e)
         {
-            ClippyIO.Data_XML_Load(@"C:\Users\martin.buchan\source\repos\WebPass\WebPass\savefiles\saveDetails.xml");
+            Button btn = (Button)sender;
+            MyButtonHandler(btn.Name.ToString());
         }
+
+        private void ButtonSeven_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            MyButtonHandler(btn.Name.ToString());
+        }
+        private void ButtonEight_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            MyButtonHandler(btn.Name.ToString());
+        }
+        private void ButtonNine_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            MyButtonHandler(btn.Name.ToString());
+        }
+        private void ButtonTen_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            MyButtonHandler(btn.Name.ToString());
+        }
+        #endregion
     }
 }
