@@ -8,8 +8,8 @@ namespace WebPass
 {
     public class ItemInfo
     {
-        public enum Type {Clip, File, Program}
-        public enum Position { ButtonOne, ButtonTwo, ButtonThree, ButtonFour, ButtonFive, ButtonSix, ButtonSeven, ButtonEight, ButtonNine, ButtonTen, dropDownOne, dropDownTwo}
+        public enum Type { Clip, File, Program }
+        public enum Position { ButtonOne, ButtonTwo, ButtonThree, ButtonFour, ButtonFive, ButtonSix, ButtonSeven, ButtonEight, ButtonNine, ButtonTen, dropDownOne, dropDownTwo }
 
         Type type;
         String name;
@@ -42,7 +42,7 @@ namespace WebPass
         {
             foreach (ItemInfo thing in list)
             {
-                if (item == thing.Name) 
+                if (item == thing.Name)
                 {
                     return thing.Detail;
                 }
@@ -68,9 +68,9 @@ namespace WebPass
         internal Position Position1 { get => position; set => position = value; }
         public int Location { get => location; set => location = value; }
 
-        public static implicit operator List<object>(ItemInfo v)
-        {
-            throw new NotImplementedException();
-        }
+        //public static implicit operator List<object>(ItemInfo v)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

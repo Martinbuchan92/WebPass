@@ -12,12 +12,12 @@ namespace WebPass
         public Settings()
         {
             InitializeComponent();
+            MouseDown += Settings_MouseDown;
         }
 
         public Settings(List<ItemInfo> items) : this()
         {
             this.items = items;
-
         }
 
         private void Settings_Load(object sender, EventArgs e)
@@ -36,17 +36,6 @@ namespace WebPass
                     CmbItemSelect.Items.Add(thing.Position1);
                 }
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            openFileDialog1.ShowDialog();
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            openFileDialog1.ShowDialog();
         }
 
         private void rbClipboard_CheckedChanged(object sender, EventArgs e)
@@ -97,7 +86,7 @@ namespace WebPass
 
         private void CmbItemSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-           selectedItem = ItemInfo.Details_From_Position(CmbItemSelect.SelectedItem.ToString(), 0, items);
+            selectedItem = ItemInfo.Details_From_Position(CmbItemSelect.SelectedItem.ToString(), 0, items);
             CmbItemSelect2.Items.Clear();
             foreach (ItemInfo thing in items)
             {
@@ -148,7 +137,7 @@ namespace WebPass
             {
                 return ItemInfo.Type.Clip;
             }
-            else if(rbOpenFile.Checked)
+            else if (rbOpenFile.Checked)
             {
                 return ItemInfo.Type.File;
             }
@@ -163,10 +152,12 @@ namespace WebPass
             if (type == ItemInfo.Type.Clip)
             {
                 return txtClipboard.Text;
-            }else if (type == ItemInfo.Type.File)
+            }
+            else if (type == ItemInfo.Type.File)
             {
                 return txtFilePath.Text;
-            }else
+            }
+            else
                 return txtProgramPath.Text;
         }
 
@@ -179,14 +170,39 @@ namespace WebPass
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            selectedItem.Name = txtName.Text;
-            selectedItem.Type1 = ReturnType();
-            selectedItem.Detail = UpdateData(ReturnType());
+            try
+            {
+                selectedItem.Name = txtName.Text;
+                selectedItem.Type1 = ReturnType();
+                selectedItem.Detail = UpdateData(ReturnType());
+                MessageBox.Show("Changes Saved");
+            }
+            catch
+            {
+                MessageBox.Show("Nothing to Save");
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();           
+            this.Close();
+        }
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        private void Settings_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
         }
     }
 }

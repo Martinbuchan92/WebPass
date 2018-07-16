@@ -16,18 +16,23 @@ namespace WebPass
         public Clippy()
         {
             InitializeComponent();
-            MouseDown += Clippy_MouseDown;
         }
 
-        public Clippy(List<List<ItemInfo>> myList) : this()
+        private void Clippy_Load(object sender, EventArgs e)
         {
+            Height = 27;
+            Location = new Point((Screen.PrimaryScreen.WorkingArea.Width / 2) - Width / 2, 0);
+            MouseDown += Clippy_MouseDown;
+            List<List<ItemInfo>> myList = ClippyIO.Data_Load(@"..\..\savefiles\workstuff2.csv");
+
             foreach (List<ItemInfo> sublist in myList)
             {
-                foreach(ItemInfo thing in sublist)
+                foreach (ItemInfo thing in sublist)
                 {
                     items.Add(thing);
                 }
             }
+
             Populate_Combo();
             Button_namer("ButtonOne", ButtonOne);
             Button_namer("ButtonTwo", ButtonTwo);
@@ -39,12 +44,11 @@ namespace WebPass
             Button_namer("ButtonEight", ButtonEight);
             Button_namer("ButtonNine", ButtonNine);
             Button_namer("ButtonTen", ButtonTen);
-
         }
 
         public void Button_namer(String btnName, Button selectedBtn)
         {
-            foreach(ItemInfo thing in items)
+            foreach (ItemInfo thing in items)
             {
                 if (thing.Position1.ToString().Equals(btnName))
                 {
@@ -70,27 +74,17 @@ namespace WebPass
                 }
                 else
                 {
-
+                    //don't add item to anything
                 }
             }
         }
 
-        void MyButtonHandler(String selectedPosition)
+        void MyButtonHandler(object sender, EventArgs e)
         {
+            String selectedPosition = ((Button)sender).Name.ToString();
             ItemInfo selectedItem = ItemInfo.Details_From_Position(selectedPosition, 0, items);
 
-            if (selectedItem.Type1 == ItemInfo.Type.Clip)
-            {
-                try
-                {
-                    Clipboard.SetText(selectedItem.Detail);
-                }
-                catch
-                {
-
-                }
-            }
-            else if (selectedItem.Type1 == ItemInfo.Type.File)
+            if (selectedItem.Type1 == ItemInfo.Type.File)
             {
                 try
                 {
@@ -114,10 +108,17 @@ namespace WebPass
             }
             else
             {
-                Clipboard.SetText(selectedItem.Detail);
+                try
+                {
+                    Clipboard.SetText(selectedItem.Detail);
+                }
+                catch
+                {
+
+                }
             }
         }
-        
+
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
@@ -125,19 +126,13 @@ namespace WebPass
             this.Close();
         }
 
-        //private void btnNotePad_Click(object sender, EventArgs e)
-        //{
-        //    Button btn = (Button)sender;
-        //    MyButtonHandler(btn.Name.ToString());
-        //}
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            Settings setting = new Settings(items);
+            setting.Show();
+        }
 
-        //private void btnMedsPro_Click(object sender, EventArgs e)
-        //{
-        //    Button btn = (Button)sender;
-        //    MyButtonHandler(btn.Name.ToString());
-        //}
-
-        private void btnOther_Click(object sender, EventArgs e)
+        private void btnMore_Click(object sender, EventArgs e)
         {
             if (more == false)
             {
@@ -152,24 +147,12 @@ namespace WebPass
 
         }
 
-        private void cmbOne_SelectedIndexChanged(object sender, EventArgs e)
+        private void Cmb_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ComboBox changedComboBox = (ComboBox)sender;
             try
             {
-                String retrievedDetails = ItemInfo.Return_Details(cmbOne.SelectedItem.ToString(), items);
-                Clipboard.SetText(retrievedDetails);
-            }
-            catch (System.Runtime.InteropServices.ExternalException)
-            {
-
-            }
-        }
-
-        private void cmbTwo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                String retrievedDetails = ItemInfo.Return_Details(cmbTwo.SelectedItem.ToString(), items);
+                String retrievedDetails = ItemInfo.Return_Details(changedComboBox.SelectedItem.ToString(), items);
                 Clipboard.SetText(retrievedDetails);
             }
             catch (System.Runtime.InteropServices.ExternalException)
@@ -194,77 +177,5 @@ namespace WebPass
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            Settings setting = new Settings(items);
-            this.Hide();
-            setting.Show();
-        }
-
-        private void Clippy_Load(object sender, EventArgs e)
-        {
-            this.Height = 27;
-        }
-
-        #region buttons
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            MyButtonHandler(btn.Name.ToString());
-        }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            MyButtonHandler(btn.Name.ToString());
-        }
-
-        private void Button3_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            MyButtonHandler(btn.Name.ToString());
-        }
-
-        private void Button4_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            MyButtonHandler(btn.Name.ToString());
-        }
-
-        private void Button5_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            MyButtonHandler(btn.Name.ToString());
-        }
-
-        private void ButtonSix_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            MyButtonHandler(btn.Name.ToString());
-        }
-
-        private void ButtonSeven_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            MyButtonHandler(btn.Name.ToString());
-        }
-        private void ButtonEight_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            MyButtonHandler(btn.Name.ToString());
-        }
-        private void ButtonNine_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            MyButtonHandler(btn.Name.ToString());
-        }
-        private void ButtonTen_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            MyButtonHandler(btn.Name.ToString());
-        }
-        #endregion
     }
 }

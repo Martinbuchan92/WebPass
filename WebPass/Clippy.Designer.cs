@@ -42,7 +42,7 @@ namespace WebPass
             this.ButtonNine = new System.Windows.Forms.Button();
             this.ButtonTen = new System.Windows.Forms.Button();
             this.cmbOne = new System.Windows.Forms.ComboBox();
-            this.btnOther = new System.Windows.Forms.Button();
+            this.btnMore = new System.Windows.Forms.Button();
             this.cmbTwo = new System.Windows.Forms.ComboBox();
             this.BtnClose = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
@@ -58,7 +58,7 @@ namespace WebPass
             this.ButtonOne.TabIndex = 0;
             this.ButtonOne.Text = "CD Key";
             this.ButtonOne.UseVisualStyleBackColor = true;
-            this.ButtonOne.Click += new System.EventHandler(this.Button1_Click);
+            this.ButtonOne.Click += new System.EventHandler(this.MyButtonHandler);
             // 
             // ButtonTwo
             // 
@@ -70,7 +70,7 @@ namespace WebPass
             this.ButtonTwo.TabIndex = 1;
             this.ButtonTwo.Text = "SQL";
             this.ButtonTwo.UseVisualStyleBackColor = true;
-            this.ButtonTwo.Click += new System.EventHandler(this.Button2_Click);
+            this.ButtonTwo.Click += new System.EventHandler(this.MyButtonHandler);
             // 
             // ButtonThree
             // 
@@ -82,7 +82,7 @@ namespace WebPass
             this.ButtonThree.TabIndex = 2;
             this.ButtonThree.Text = "RBS";
             this.ButtonThree.UseVisualStyleBackColor = true;
-            this.ButtonThree.Click += new System.EventHandler(this.Button3_Click);
+            this.ButtonThree.Click += new System.EventHandler(this.MyButtonHandler);
             // 
             // ButtonFour
             // 
@@ -94,7 +94,7 @@ namespace WebPass
             this.ButtonFour.TabIndex = 11;
             this.ButtonFour.Text = "NotePad++";
             this.ButtonFour.UseVisualStyleBackColor = true;
-            this.ButtonFour.Click += new System.EventHandler(this.Button4_Click);
+            this.ButtonFour.Click += new System.EventHandler(this.MyButtonHandler);
             // 
             // ButtonFive
             // 
@@ -106,7 +106,7 @@ namespace WebPass
             this.ButtonFive.TabIndex = 4;
             this.ButtonFive.Text = "RegAdd";
             this.ButtonFive.UseVisualStyleBackColor = true;
-            this.ButtonFive.Click += new System.EventHandler(this.Button5_Click);
+            this.ButtonFive.Click += new System.EventHandler(this.MyButtonHandler);
             // 
             // ButtonSix
             // 
@@ -118,7 +118,7 @@ namespace WebPass
             this.ButtonSix.TabIndex = 7;
             this.ButtonSix.Text = "One";
             this.ButtonSix.UseVisualStyleBackColor = true;
-            this.ButtonSix.Click += new System.EventHandler(this.ButtonSix_Click);
+            this.ButtonSix.Click += new System.EventHandler(this.MyButtonHandler);
             // 
             // ButtonSeven
             // 
@@ -130,7 +130,7 @@ namespace WebPass
             this.ButtonSeven.TabIndex = 8;
             this.ButtonSeven.Text = "Two";
             this.ButtonSeven.UseVisualStyleBackColor = true;
-            this.ButtonSeven.Click += new System.EventHandler(this.ButtonSeven_Click);
+            this.ButtonSeven.Click += new System.EventHandler(this.MyButtonHandler);
             // 
             // ButtonEight
             // 
@@ -142,7 +142,7 @@ namespace WebPass
             this.ButtonEight.TabIndex = 9;
             this.ButtonEight.Text = "Three";
             this.ButtonEight.UseVisualStyleBackColor = true;
-            this.ButtonNine.Click += new System.EventHandler(this.ButtonEight_Click);
+            this.ButtonEight.Click += new System.EventHandler(this.MyButtonHandler);
             // 
             // ButtonNine
             // 
@@ -154,7 +154,7 @@ namespace WebPass
             this.ButtonNine.TabIndex = 10;
             this.ButtonNine.Text = "MedsPro";
             this.ButtonNine.UseVisualStyleBackColor = true;
-            this.ButtonNine.Click += new System.EventHandler(this.ButtonNine_Click);
+            this.ButtonNine.Click += new System.EventHandler(this.MyButtonHandler);
             // 
             // ButtonTen
             // 
@@ -166,7 +166,7 @@ namespace WebPass
             this.ButtonTen.TabIndex = 3;
             this.ButtonTen.Text = "CCleaner";
             this.ButtonTen.UseVisualStyleBackColor = true;
-            this.ButtonTen.Click += new System.EventHandler(this.ButtonTen_Click);
+            this.ButtonTen.Click += new System.EventHandler(this.MyButtonHandler);
             // 
             // cmbOne
             // 
@@ -179,19 +179,19 @@ namespace WebPass
             this.cmbOne.Name = "cmbOne";
             this.cmbOne.Size = new System.Drawing.Size(144, 21);
             this.cmbOne.TabIndex = 5;
-            this.cmbOne.SelectedIndexChanged += new System.EventHandler(this.cmbOne_SelectedIndexChanged);
+            this.cmbOne.SelectedIndexChanged += new System.EventHandler(this.Cmb_SelectedIndexChanged);
             // 
-            // btnOther
+            // btnMore
             // 
-            this.btnOther.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnOther.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnOther.Location = new System.Drawing.Point(568, 3);
-            this.btnOther.Name = "btnOther";
-            this.btnOther.Size = new System.Drawing.Size(75, 21);
-            this.btnOther.TabIndex = 6;
-            this.btnOther.Text = "More...";
-            this.btnOther.UseVisualStyleBackColor = true;
-            this.btnOther.Click += new System.EventHandler(this.btnOther_Click);
+            this.btnMore.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMore.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMore.Location = new System.Drawing.Point(568, 3);
+            this.btnMore.Name = "btnMore";
+            this.btnMore.Size = new System.Drawing.Size(75, 21);
+            this.btnMore.TabIndex = 6;
+            this.btnMore.Text = "More...";
+            this.btnMore.UseVisualStyleBackColor = true;
+            this.btnMore.Click += new System.EventHandler(this.btnMore_Click);
             // 
             // cmbTwo
             // 
@@ -204,7 +204,7 @@ namespace WebPass
             this.cmbTwo.Name = "cmbTwo";
             this.cmbTwo.Size = new System.Drawing.Size(144, 21);
             this.cmbTwo.TabIndex = 15;
-            this.cmbTwo.SelectedIndexChanged += new System.EventHandler(this.cmbTwo_SelectedIndexChanged);
+            this.cmbTwo.SelectedIndexChanged += new System.EventHandler(this.Cmb_SelectedIndexChanged);
             // 
             // BtnClose
             // 
@@ -247,7 +247,7 @@ namespace WebPass
             this.Controls.Add(this.ButtonEight);
             this.Controls.Add(this.ButtonSeven);
             this.Controls.Add(this.ButtonSix);
-            this.Controls.Add(this.btnOther);
+            this.Controls.Add(this.btnMore);
             this.Controls.Add(this.cmbOne);
             this.Controls.Add(this.ButtonFive);
             this.Controls.Add(this.ButtonTen);
@@ -273,7 +273,7 @@ namespace WebPass
         private System.Windows.Forms.Button ButtonThree;
         private System.Windows.Forms.Button ButtonTen;
         private System.Windows.Forms.Button ButtonFive;
-        private System.Windows.Forms.Button btnOther;
+        private System.Windows.Forms.Button btnMore;
         private System.Windows.Forms.Button ButtonSix;
         private System.Windows.Forms.Button ButtonSeven;
         private System.Windows.Forms.Button ButtonEight;

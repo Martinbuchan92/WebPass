@@ -59,52 +59,5 @@ namespace WebPass
             Console.WriteLine("saved");
             return true;
         }
-
-        //public static List<List<ItemInfo>> Data_XML_Load(String path)
-        //{
-        //    XmlReader reader = XmlReader.Create(path);
-        //    while (reader.Read())
-        //    {
-        //        if((reader.NodeType == XmlNodeType.Element) && (reader.Name == "Item"))
-        //        {
-        //            if (reader.HasAttributes)
-        //                Console.WriteLine(reader.GetAttribute("Name"));
-        //        }
-        //    }
-
-        //    return null;
-        //}
-
-        //public static Boolean Data_XML_Save(List<ItemInfo> item, String path)
-        //{
-        //    using (XmlWriter xmlFile = XmlWriter.Create(path))
-        //    {
-        //        xmlFile.WriteStartDocument();
-        //        xmlFile.WriteStartElement("Items");
-
-        //        foreach (ItemInfo thing in item)
-        //        {
-
-        //            xmlFile.WriteStartElement("Item");
-
-        //            xmlFile.WriteElementString("Type", thing.Type1.ToString());
-        //            xmlFile.WriteElementString("Name", thing.Name);
-        //            xmlFile.WriteElementString("Position", thing.Position1.ToString());
-        //            xmlFile.WriteElementString("Details", thing.Detail);
-        //            if (thing.Location != 0)
-        //            {
-        //                xmlFile.WriteElementString("Location", thing.Location.ToString());
-        //            }
-
-        //            xmlFile.WriteEndElement();
-
-        //        }
-
-        //        xmlFile.WriteEndElement();
-        //        xmlFile.WriteEndDocument();
-
-        //    }
-        //    return true;
-        //}
     }
 }
