@@ -1,23 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace WebPass
 {
     public partial class Settings : Form
     {
         public OpenFileDialog file;
         List<ItemInfo> items;
+        ItemInfo selectedItem;
 
         public Settings()
         {
             InitializeComponent();
+            MouseDown += Settings_MouseDown;
         }
 
         public Settings(List<ItemInfo> items) : this()
@@ -27,18 +22,20 @@ namespace WebPass
 
         private void Settings_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            openFileDialog1.ShowDialog();
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            openFileDialog1.ShowDialog();
+            foreach (ItemInfo thing in items)
+            {
+                if (thing.Position1 == ItemInfo.Position.dropDownOne || thing.Position1 == ItemInfo.Position.dropDownTwo)
+                {
+                    if (!CmbItemSelect.Items.Contains(thing.Position1))
+                    {
+                        CmbItemSelect.Items.Add(thing.Position1);
+                    }
+                }
+                else
+                {
+                    CmbItemSelect.Items.Add(thing.Position1);
+                }
+            }
         }
 
         private void rbClipboard_CheckedChanged(object sender, EventArgs e)
@@ -89,21 +86,122 @@ namespace WebPass
 
         private void CmbItemSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-           ItemInfo selectedItem = ItemInfo.Details_From_Position(CmbItemSelect.SelectedItem.ToString(), items);
-           FillSettingsForm(selectedItem);
+            selectedItem = ItemInfo.Details_From_Position(CmbItemSelect.SelectedItem.ToString(), 0, items);
+            CmbItemSelect2.Items.Clear();
+            foreach (ItemInfo thing in items)
+            {
+                if (selectedItem.Position1 == thing.Position1)
+                {
+                    CmbItemSelect2.Items.Add(thing.Location);
+                }
+            }
+
+            FillSettingsForm(selectedItem);
+        }
+
+        private void CmbItemSelect2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedItem = ItemInfo.Details_From_Position(CmbItemSelect.SelectedItem.ToString(), int.Parse(CmbItemSelect2.SelectedItem.ToString()), items);
+
+            FillSettingsForm(selectedItem);
         }
 
         private void FillSettingsForm(ItemInfo selectedItem)
         {
-            if(selectedItem.Type1 == ItemInfo.Type.Clip)
+            if (selectedItem.Type1 == ItemInfo.Type.Clip)
             {
-                rbClipboard.Select();
-            }else if(selectedItem.Type1 == ItemInfo.Type.File)
+                clearboxes();
+                rbClipboard.Checked = true;
+                txtClipboard.Text = selectedItem.Detail;
+                txtName.Text = selectedItem.Name;
+            }
+            else if (selectedItem.Type1 == ItemInfo.Type.File)
             {
+                clearboxes();
+                rbOpenFile.Checked = true;
+                txtFilePath.Text = selectedItem.Detail;
+                txtName.Text = selectedItem.Name;
+            }
+            else if (selectedItem.Type1 == ItemInfo.Type.Program)
+            {
+                clearboxes();
+                rbOpenSoftware.Checked = true;
+                txtProgramPath.Text = selectedItem.Detail;
+                txtName.Text = selectedItem.Name;
+            }
+        }
 
-            }else if(selectedItem.Type1 == ItemInfo.Type.Program)
+        private ItemInfo.Type ReturnType()
+        {
+            if (rbClipboard.Checked)
             {
+                return ItemInfo.Type.Clip;
+            }
+            else if (rbOpenFile.Checked)
+            {
+                return ItemInfo.Type.File;
+            }
+            else
+            {
+                return ItemInfo.Type.Program;
+            }
+        }
 
+        private String UpdateData(ItemInfo.Type type)
+        {
+            if (type == ItemInfo.Type.Clip)
+            {
+                return txtClipboard.Text;
+            }
+            else if (type == ItemInfo.Type.File)
+            {
+                return txtFilePath.Text;
+            }
+            else
+                return txtProgramPath.Text;
+        }
+
+        private void clearboxes()
+        {
+            txtClipboard.Text = "";
+            txtFilePath.Text = "";
+            txtProgramPath.Text = "";
+        }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                selectedItem.Name = txtName.Text;
+                selectedItem.Type1 = ReturnType();
+                selectedItem.Detail = UpdateData(ReturnType());
+                MessageBox.Show("Changes Saved");
+            }
+            catch
+            {
+                MessageBox.Show("Nothing to Save");
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        private void Settings_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
     }
